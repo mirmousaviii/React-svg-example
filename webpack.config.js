@@ -1,33 +1,34 @@
 module.exports = {
-  devtool: 'eval-source-map',
-  entry:  __dirname + "/app/main.js",
-  output: {
-    path: __dirname + "/public",
-    filename: "bundle.js"
-  },
+    devtool: 'eval-source-map',
+    entry: __dirname + "/app/main.js",
+    output: {
+        path: __dirname + "/public",
+        filename: "bundle.js"
+    },
 
-  module: {
-    loaders: [
-      {
-        test: /\.json$/,
-        loader: "json"
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
-      },
-      {
-        test: /\.css$/,
-        loader: 'style!css?modules'
-      }
-    ]
-  },
+    module: {
+        loaders: [
+            {
+                test: /\.json$/,
+                loader: "json"
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!css?modules'
+            }
+        ]
+    },
 
-  devServer: {
-    contentBase: "./public",
-    colors: true,
-    historyApiFallback: true,
-    inline: true
-  } 
+    devServer: {
+        contentBase: "./public",
+        port: 8081,
+        colors: true,
+        historyApiFallback: true,
+        inline: true
+    }
 }
