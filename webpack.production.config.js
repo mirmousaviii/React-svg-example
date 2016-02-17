@@ -1,19 +1,19 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
-    entry: __dirname + "/app/main.js",
+    entry: __dirname + '/app/main.js',
     output: {
         path: __dirname + "/build",
-        filename: "bundle.js"
+        filename: "[name]-[hash].js"
     },
 
     module: {
         loaders: [
             {
                 test: /\.json$/,
-                loader: "json"
+                loader: 'json'
             },
             {
                 test: /\.js$/,
@@ -22,28 +22,21 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style!css?modules!postcss'
+                loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
             }
         ]
     },
-
     postcss: [
         require('autoprefixer')
     ],
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: __dirname + "/app/index.tmpl.html"
+            template: __dirname + '/app/index.tmpl.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new ExtractTextPlugin("[name]-[hash].css")
     ],
 
-    devServer: {
-        contentBase: "./public",
-        port: 8081,
-        colors: true,
-        historyApiFallback: true,
-        inline: true,
-        hot: true
-    }
 }
