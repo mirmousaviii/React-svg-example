@@ -1,8 +1,11 @@
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     devtool: 'eval-source-map',
     entry: __dirname + "/app/main.js",
     output: {
-        path: __dirname + "/public",
+        path: __dirname + "/build",
         filename: "bundle.js"
     },
 
@@ -19,10 +22,20 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style!css?modules'
+                loader: 'style!css?modules!postcss'
             }
         ]
     },
+
+    postcss: [
+        require('autoprefixer')
+    ],
+
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: __dirname + "/app/index.tmpl.html"
+        })
+    ],
 
     devServer: {
         contentBase: "./public",
