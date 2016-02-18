@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import config from './config.json';
-import styles from './greeter.css';
+import styles from './style.css';
 
-class Greeter extends Component {
+class Footer extends Component {
     render() {
         return (
             <div className={styles.root}>
-                {config.greetText}
+                {config.contentText}
             </div>
         );
     }
 }
 
-export default Greeter
+export default Footer

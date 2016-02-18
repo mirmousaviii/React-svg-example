@@ -1,0 +1,8 @@
+.root {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #05AFF2;
+    padding: 10px;
+    border-top: 3px solid #B1B1B1;
+}
