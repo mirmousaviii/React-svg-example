@@ -7,7 +7,7 @@ Webpack sample with some features
 - JSX
 - Stylesheet
 - CSS Modules
-- CSS Post Processors
+- CSS Processors with postcss
 - Plugins (HtmlWebpackPlugin, Hot Module Replacement
 - Optimization Plugins (OccurenceOrderPlugin, UglifyJsPlugin, ExtractTextPlugin)
 - Component structure (Module structure)

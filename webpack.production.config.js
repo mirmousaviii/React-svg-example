@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
 
 module.exports = {
     entry: __dirname + '/app/scritp.js',
@@ -21,14 +23,15 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /\.css$/,
+                test: /\.css$|\.pcss$/,
                 loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
             }
         ]
     },
-    postcss: [
-        require('autoprefixer')
-    ],
+
+    postcss: function () {
+        return [autoprefixer, precss];
+    },
 
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,5 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -21,15 +23,15 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /\.css$/,
+                test: /\.css$|\.pcss$/,
                 loader: 'style!css?modules!postcss'
             }
         ]
     },
 
-    postcss: [
-        require('autoprefixer')
-    ],
+    postcss: function () {
+        return [autoprefixer, precss];
+    },
 
     plugins: [
         new HtmlWebpackPlugin({
