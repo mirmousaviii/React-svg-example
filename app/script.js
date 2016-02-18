@@ -9,10 +9,10 @@ import './style.css';
 render(<Header />, document.querySelector('.header'));
 render(
     <div>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card title="Test 1"/>
+        <Card title="Test 2">AAA</Card>
+        <Card title="Test 3">BBB</Card>
+        <Card title="Test 4"/>
     </div>,
     document.querySelector('.main')
 );

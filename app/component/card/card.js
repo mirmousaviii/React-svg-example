@@ -6,8 +6,9 @@ class Card extends Component {
     render() {
         return (
             <div className={styles.root}>
-                <h3>Card</h3>
+                <h3>{this.props.title}</h3>
                 <p>{config.contentText}</p>
+                <p>This is {this.props.children}</p>
             </div>
         );
     }
