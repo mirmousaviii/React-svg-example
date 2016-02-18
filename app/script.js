@@ -7,5 +7,13 @@ import Footer from './component/footer/footer';
 import './style.css';
 
 render(<Header />, document.querySelector('.header'));
-render(<Card />, document.querySelector('.card'));
+render(
+    <div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+    </div>,
+    document.querySelector('.main')
+);
 render(<Footer />, document.querySelector('.footer'));
