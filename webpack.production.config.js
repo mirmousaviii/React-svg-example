@@ -5,7 +5,7 @@ var autoprefixer = require('autoprefixer');
 var precss       = require('precss');
 
 module.exports = {
-    entry: __dirname + '/app/scritp.js',
+    entry: __dirname + '/app/script.js',
     output: {
         path: __dirname + "/build",
         filename: "[name]-[hash].js"
@@ -40,6 +40,6 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin("[name]-[hash].css")
-    ],
+    ]
 
 }
