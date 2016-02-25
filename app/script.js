@@ -6,6 +6,14 @@ import Footer from './component/footer/footer';
 
 import './style.css';
 
+
+if (window.jQuery) {
+    console.info("Loaded jQuery!");
+} else {
+    console.error("jQuery Doesn't Work!");
+}
+
+
 render(<Header />, document.querySelector('.header'));
 render(
     <div>
