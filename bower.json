@@ -1,0 +1,21 @@
+{
+  "name": "webpack-sample",
+  "description": "Webpack sample with React and Babel",
+  "main": "",
+  "authors": [
+    "Mostafa Mirmousavi"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mirmousaviii/Webpack-Sample",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "^1.11.4"
+  }
+}
