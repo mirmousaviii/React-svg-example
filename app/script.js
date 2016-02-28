@@ -7,7 +7,7 @@ import Footer from './component/footer/footer';
 import './style.css';
 
 
-if (window.jQuery) {
+if (typeof jQuery != 'undefined') {
     console.info("Loaded jQuery!");
 } else {
     console.error("jQuery Doesn't Work!");
