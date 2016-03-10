@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Webpack sample with React and Babel",
   "scripts": {
-    "start": "webpack-dev-server --progress",
+    "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack -config ./webpack.production.config.js --progress"
   },
   "repository": {
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-svg-loader": "0.0.6"
   }
 }

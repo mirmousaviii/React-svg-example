@@ -1,10 +1,11 @@
-# Webpack-Sample
+# React svg example
 Webpack sample with some features
 
 ### Features
 - Babel (ES6 / ES2015, ES7 / ES2016, etc)
 - React
 - JSX
+- Svg
 - Stylesheet
 - CSS Modules
 - CSS Processors with postcss

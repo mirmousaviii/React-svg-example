@@ -4,7 +4,7 @@ var autoprefixer = require('autoprefixer');
 var precss       = require('precss');
 
 module.exports = {
-    // devtool: 'eval-source-map',
+    devtool: 'eval-source-map',
     entry: __dirname + "/app/script.js",
     output: {
         path: __dirname + "/build",
@@ -23,8 +23,12 @@ module.exports = {
                 loader: 'babel'
             },
             {
-                test: /\.css$|\.pcss$/,
-                loader: 'style!css?modules!postcss'
+                test: /\.css$/,
+                loader: 'style!css?modules'
+            },
+            {
+                test: /\.svg$/,
+                loader: 'babel!react-svg'
             }
         ]
     },
@@ -38,11 +42,6 @@ module.exports = {
             template: __dirname + "/app/index.tmpl.html"
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        })
     ],
 
     devServer: {
